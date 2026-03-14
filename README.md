@@ -8,3 +8,7 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
 
 ### Contributors
 [Jacob Cann](https://github.com/Jacob-F-Cann)
+
+### Usage Tutorial
+
+1. View the app [here](https://connect.posit.cloud/jacob-f-cann/content/019cedf7-e44b-b16e-2beb-70408aa0e9d1) on Posit Connect Cloud.
