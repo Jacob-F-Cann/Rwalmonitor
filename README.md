@@ -27,7 +27,7 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
    ```r
    install.packages("shiny")
    ```
-3. Ensure that the dependencies are installed:
+3. Ensure that the following dependencies are installed:
    ```r
    install.packages("bslib")
    install.packages("dplyr")
