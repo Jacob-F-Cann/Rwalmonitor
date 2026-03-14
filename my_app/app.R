@@ -1,5 +1,8 @@
 library(shiny)
 library(bslib)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
 
 # Skeleton from: https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/
 
