@@ -11,4 +11,9 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
 
 ### Usage Tutorial
 
+##### Remote Viewing
 1. View the app [here](https://019cedf7-e44b-b16e-2beb-70408aa0e9d1.share.connect.posit.cloud/) on Posit Connect Cloud.
+
+##### Locally Viewing/Editing
+1. clone the repo: `bash git clone https://github.com/Jacob-F-Cann/Rwalmonitor.git` or
+   `bash git clone git@github.com:Jacob-F-Cann/Rwalmonitor.git`
