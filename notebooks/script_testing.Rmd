@@ -1,0 +1,26 @@
+```{r}
+
+df <- read.csv('../data/raw/walmart_sales_data.csv')
+head(df)
+tail(df)
+```
+
+```{r}
+
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+
+df <- df |> mutate(Date = as.Date(Date)) |> 
+  group_by(Date) |>
+  summarise(across(where(is.numeric), sum))
+
+metrics_default <- c('Total', 'cogs')
+
+plot <-  df |> pivot_longer(cols = all_of(metrics_default),
+                names_to = "variable", values_to = "value") |> 
+  ggplot(aes(x = Date, y=value, color=variable))+
+  geom_line()+
+  labs(y = paste(metrics_default, collapse = ", "))
+plot
+```
