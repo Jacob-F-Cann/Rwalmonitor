@@ -28,3 +28,9 @@ plot <-  df |> pivot_longer(cols = all_of(metrics_default),
        title = 'Selected Metrics Over Time')
 plot
 ```
+
+```{r}
+
+metric_choices <- colnames(df |> select(-Date))
+metric_choices
+```
