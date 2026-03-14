@@ -39,3 +39,10 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
    ```r
    rsconnect::writeManifest('my_app')
    ```
+5. Test the deployment locally
+   ```r
+   options(shiny.autoreload = TRUE) # if you want real-time updates while editing app.R
+   shiny::runApp("my_app")
+   ```
+6. Publish to Posit Connect Cloud:
+   [Follow These Step-by-Step Instructions](https://docs.posit.co/connect-cloud/user/content/shiny.html)
