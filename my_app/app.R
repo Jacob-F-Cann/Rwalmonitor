@@ -20,7 +20,8 @@ time_default <- c('2019-01-01', '2019-02-01')
 ui <- page_sidebar(
   # App title ----
   title = "Rwalmonitor",
-  # Sidebar panel for date inputs ----
+  
+  # Sidebar panel for metric and date inputs ----
   sidebar = sidebar(width = 300,
   sliderInput(
     inputId = "date_range",
@@ -38,6 +39,24 @@ ui <- page_sidebar(
   )
   ),
   
+  layout_columns(
+    value_box(
+      title = "Total Sales in Date Range",
+      value = textOutput("total_sales"),
+      height='50px'
+    ),
+    value_box(
+      title = "Total Gross Income in Date Range",
+      value = textOutput("gross_income"),
+      height='50px'
+    ),
+    value_box(
+      title = "Gross Margin % in Date Range",
+      value = textOutput("margin"),
+      height='50px'
+    )
+  ),
+  
   # Output Line Plot
   plotOutput(outputId = "LinePlot")
 )
@@ -48,19 +67,50 @@ server <- function(input, output) {
   
   filtered_data <- reactive(
     {
-    df |> filter(Date >= input$date_range[1], Date <= input$date_range[2])
+    df |> filter(Date >= input$date_range[1],
+                 Date <= input$date_range[2])
+    }
+  )
+  
+  output$total_sales <- renderText(
+    {
+      total <- filtered_data() |> 
+        summarise(Total = sum(Total)) |> 
+        pull(Total)
+      
+      scales::dollar(total)
+    }
+  )
+  
+  output$gross_income <- renderText(
+    {
+      gross <- filtered_data() |> 
+        summarise(gross = sum(gross.income)) |> 
+        pull(gross)
+      
+      scales::dollar(gross)
+    }
+  )
+  
+  output$margin <- renderText(
+    {
+      margin <- filtered_data() |> 
+        summarise(margin = mean(gross.margin.percentage)/100) |> 
+        pull(margin)
+      
+      scales::percent(margin)
     }
   )
   
   output$LinePlot <- renderPlot(
     {
     filtered_data() |> pivot_longer(cols = all_of(input$input_metrics),
-                                names_to = "variable", values_to = "value") |>
+                        names_to = "variable", values_to = "value") |>
       ggplot(aes(x = Date, y=value, color=variable))+
       geom_line()+
       labs(y = paste(metrics_default, collapse = ", "),
            title = 'Selected Metrics Over Time')
-  }
+    }
   )
   
 }
