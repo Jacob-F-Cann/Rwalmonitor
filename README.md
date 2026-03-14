@@ -2,7 +2,7 @@
 
 ### Project Description
 
-DSCI 532 Individual Assignment - Group 2 Walmonitor in R
+DSCI 532 Individual Assignment - Group 2 Walmonitor in `R`
 
 This R shiny dashboard application has been adpated from the python shiny dashboard application created here: [https://github.com/UBC-MDS/DSCI-532_2026_2_walmonitor](https://github.com/UBC-MDS/DSCI-532_2026_2_walmonitor).
 
@@ -11,11 +11,11 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
 
 ### Usage Tutorial
 
-##### Remote Viewing
-1. View the app [here](https://019cedf7-e44b-b16e-2beb-70408aa0e9d1.share.connect.posit.cloud/) on Posit Connect Cloud.
+#### Remote Viewing
+1. View the app [here](https://jacob-f-cann-rwalmonitor.share.connect.posit.cloud/) on Posit Connect Cloud.
 
-##### Locally Viewing/Editing
-1. clone the repo:
+#### Locally Viewing/Editing
+1. Clone the repo:
    ```bash
    git clone https://github.com/Jacob-F-Cann/Rwalmonitor.git
    ```
@@ -23,4 +23,4 @@ This R shiny dashboard application has been adpated from the python shiny dashbo
    ```bash
    git clone git@github.com:Jacob-F-Cann/Rwalmonitor.git
    ```
-2.
+2. 
