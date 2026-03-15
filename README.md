@@ -6,6 +6,8 @@ DSCI 532 Individual Assignment - Group 2 Walmonitor in `R`
 
 This R shiny dashboard application has been adpated from the python shiny dashboard application [here](https://yhouyang02-walmonitor.share.connect.posit.cloud/), created from this [repo](https://github.com/UBC-MDS/DSCI-532_2026_2_walmonitor).
 
+The purpose of the dashboard is to provide meaningful sales metrics insight over time, to a Walmart Branch Manager overseeing sales performance for three walmart locations.
+
 ### Contributors
 [Jacob Cann](https://github.com/Jacob-F-Cann)
 
